@@ -1,0 +1,173 @@
+body {
+  background-color: #87cefa;
+  font-family: "Helvetica", sans-serif;
+  color: #800080;
+}
+
+/* h1 {
+  font-size: 50px;
+  font-family: "Times New Roman", sans-serif;
+  color: white;
+}
+
+p {
+  font-size: 20px;
+  color: #800080;
+}
+
+ol li {
+  font-size: 20px;
+}
+
+ul li {
+  font-size: 20px;
+}
+nav {
+  width: 700px;
+  border: 1px solid #800080;
+  border-radius: 8px;
+  background-color: #ff6347;
+  padding: 10px;
+}
+
+nav ul li {
+  font-size: 22px;
+  display: inline;
+  margin-left: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-style: bold;
+  font-size: 30px;
+}
+
+table td,
+th {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th,
+td {
+  vertical-align: top;
+  padding: 5px;
+  text-align: left;
+}
+ */
+ body {
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav {
+  height: 80px;
+  background: #2c3e50;
+}
+
+nav ul {
+  float: right;
+  margin-right: 25px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  font-size: 18px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+nav ul li a:before {
+  position: absolute;
+  content: "";    /* това, малко повече */
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: white; 
+  transform: scaleX(0);   /* това, малко повече */
+  transform-origin: right;  /* това, малко повече */
+  transition: transform 0.4s linear; /* това, малко повече */
+}
+
+nav ul li a:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+label #btn,
+label #cancel {
+  color: white;
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+  margin-right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 1118px) {
+  nav ul li a {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 860px) {
+  label #btn {
+    display: block;
+   
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #34495e;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px; /* това, малко повече */
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  #check:checked ~ label #btn {
+    display: none;
+  }
+
+  #check:checked ~ label #cancel {
+    display: block;
+  }
+}
